@@ -1,6 +1,7 @@
 let num1;
 let num2; 
 let operator;
+let digitClicks = 0;
 
 function add(num1,num2) {
     const sum = num1 + num2;
@@ -32,4 +33,28 @@ function operate(num1, operator, num2) {
     }
 }
 
-console.log(operate(2, '/', 5));
+const digitHandler = (e) => {const digit = e.target;
+    value = parseInt(e.target.innerText);
+    digit.style.backgroundColor = "green";
+    if(num1 === undefined) {
+        num1 = value;
+    } else {
+        num2 = value;
+        digits.removeEventListener("click", (e));
+    }
+    digitClicks++;
+    if(digitClicks >= 2) {
+        digits.removeEventListener("click", digitHandler);
+    }
+}
+
+const digits = document.querySelector('.digits');
+digits.addEventListener("click", digitHandler);
+
+const operatorHandler = (e) => {
+    operator = e.target.innerText;
+}
+
+const operators = document.querySelector('.operators');
+operators.addEventListener('click', operatorHandler);
+
