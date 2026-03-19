@@ -22,7 +22,11 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    if(num2 === 0){
+        return `Don't do that!`
+    } else {
+        return num1 / num2;
+    }
 }
 
 function operate(operator, num1, num2) {
@@ -93,3 +97,15 @@ const operators = document.querySelectorAll('.operators button');
 operators.forEach(button => {
     button.addEventListener('click', operatorHandler )
 });
+
+const reset = (e) => {
+    num1 = 0;
+    num2 = 0;
+    inputDigits1 = [];
+    inputDigits2 = [];
+    justCalculated = false;
+    display.innerText = 0;
+}
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', reset);
