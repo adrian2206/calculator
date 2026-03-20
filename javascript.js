@@ -94,6 +94,7 @@ const operatorHandler = (e) => {
         inputN1 = results.toString().split('');
         inputN2 = [];
         operator = e.target.innerText;
+        display.innerText = `${results}${operator}`;
     }else {
         operator = e.target.innerText;
         display.innerText = `${inputN1.join('')}${operator}`;
@@ -115,3 +116,26 @@ clear.addEventListener('click', (e) => {
     isCalculated = false;
     operator = null;
 })
+
+document.addEventListener('keydown', (e) => {
+    if ((e.key >= '0' && e.key <= '9') || e.key === '.') {
+        digitHandler({ target: { innerText: e.key } });
+    }
+    else if (['+', '-', '*', '/'].includes(e.key)) {
+        e.preventDefault();
+        operatorHandler({ target: { innerText: e.key } });
+    }
+
+    else if (e.key === 'Enter' || e.key === '=') {
+        e.preventDefault();
+        operatorHandler({ target: { innerText: '=' } });
+    }
+
+    else if (e.key === 'Backspace') {
+        document.querySelector('#backspace').click();
+    }
+
+    else if (e.key === 'Escape') {
+        document.querySelector('#clear').click();
+    }
+});
