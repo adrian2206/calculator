@@ -1,0 +1,90 @@
+*, html, body {
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.digits button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+#backspace {
+    width: 4.7rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+.operators button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+#clear {
+    width: 4.7rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+    width: 14.4rem;
+}
+
+#display {
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.input {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.4rem;
+}
+
+.digits {
+    display: flex;
+    flex-wrap: wrap;
+    width: 9.8rem;
+    justify-content: flex-end;
+    gap: 0.4rem;
+}
+
+.functional-btns {
+    display: flex;
+    gap: 0.4rem;
+    width: 9.8rem;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem;
+    gap: 0.4rem;
+}
